@@ -1,0 +1,83 @@
+{
+    "name": "basic-network",
+    "version": "1.0.0",
+    "client": {
+        "organization": "Sales1",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                },
+                "orderer": "300"
+            }
+        }
+    },
+    "channels": {
+        "channel1": {
+            "orderers": [
+                "orderer1.firster.co.kr"
+            ],
+            "peers": {
+                "peer0.member1.firster.co.kr": {}
+            }
+        }
+    },
+    "organizations": {
+        "Sales1": {
+            "mspid": "Sales1Org",
+            "peers": [
+                "peer0.member1.firster.co.kr"
+            ],
+            "certificateAuthorities": [
+                "ca.member1.firster.co.kr"
+            ],
+            "adminPrivateKey": {
+                "path":"../../basic-network/crypto-config/peerOrganizations/member1.firster.co.kr/users/Admin@member1.firster.co.kr/msp/keystore/"
+            },
+            "signedCert":{
+                "path":"../../basic-network/crypto-config/peerOrganizations/member1.firster.co.kr/users/Admin@member1.firster.co.kr/msp/signcerts/Admin@member1.firster.co.kr-cert.pem"
+            }
+        }
+    },
+    "orderers": {
+        "orderer1.firster.co.kr": {
+            "url": "grpc://localhost:7050",
+            "grpcOptions":{
+                "ssl-target-name-override":"orderer1.firster.co.kr",
+                "grpc-max-send-message-length": -1
+            },
+            "tlsCACerts": {
+                "path": "../../basic-network/crypto-config/ordererOrganizations/firster.co.kr/orderers/orderer1.firster.co.kr/msp/tlscacerts/tlsca.firster.co.kr-cert.pem"
+            }
+        }
+    },
+    "peers": {
+        "peer0.member1.firster.co.kr": {
+            "url": "grpc://localhost:7051",
+            "tlsCACerts": {
+                "path": "../../basic-network/crypto-config/peerOrganizations/member1.firster.co.kr/peers/peer0.member1.firster.co.kr/msp/tlscacerts/tlsca.member1.firster.co.kr-cert.pem"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer1.member1.firster.co.kr",
+                "hostnameOverride": "peer1.member1.firster.co.kr"
+            }
+        }
+    },
+    "certificateAuthorities": {
+        "ca.member1.firster.co.kr": {
+            "url": "http://localhost:7054",
+            "caName": "ca.member1.firster.co.kr",
+            "tlsCACerts": {
+                "path": "../../basic-network/crypto-config/peerOrganizations/member1.firster.co.kr/ca/ca.member1.firster.co.kr-cert.pem"
+            },
+            "registrar":{
+                "enrollId": "admin",
+                "enrollSecret": "adminpw",
+                "caName": "camember1"
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        }
+    }
+}

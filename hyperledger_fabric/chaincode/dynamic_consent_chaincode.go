@@ -23,16 +23,16 @@ func (s *SmartContract) Init(APIstub shim.ChaincodeStubInterface) pb.Response {
 func (s *SmartContract) Invoke(APIstub shim.ChaincodeStubInterface) pb.Response {
 	function, args := APIstub.GetFunctionAndParameters()
 	
-	if function == "getAgree" 							{ 	return s.getAgree(APIstub, args)
-	} else if function == "setAgree" 						{	return s.setAgree(APIstub, args)
+	if function == "getAgree" 									{ 	return s.getAgree(APIstub, args)
+	} else if function == "setAgree" 							{	return s.setAgree(APIstub, args)
 	} else if function == "getAllAgree" 						{	return s.getAllAgree(APIstub)
 	} else if function == "getAgreeByWalletId" 					{	return s.getAgreeByWalletId(APIstub, args)
-	} else if function == "getAgreeByWalletIdAndAgreeKey" 				{	return s.getAgreeByWalletIdAndAgreeKey(APIstub, args)
-	} else if function == "getHistory" 						{	return s.getHistory(APIstub, args)
-	} else if function == "setHistory" 						{	return s.setHistory(APIstub, args)
+	} else if function == "getAgreeByWalletIdAndAgreeKey" 		{	return s.getAgreeByWalletIdAndAgreeKey(APIstub, args)
+	} else if function == "getHistory" 							{	return s.getHistory(APIstub, args)
+	} else if function == "setHistory" 							{	return s.setHistory(APIstub, args)
 	} else if function == "getAllHistory" 						{	return s.getAllHistory(APIstub)
-	} else if function == "getHistoryByWalletId"					{	return s.getHistoryByWalletId(APIstub, args)
-	} else if function == "getHistoryByWalletIdAndHistoryType"			{	return s.getHistoryByWalletIdAndHistoryType(APIstub, args)
+	} else if function == "getHistoryByWalletId"				{	return s.getHistoryByWalletId(APIstub, args)
+	} else if function == "getHistoryByWalletIdAndHistoryType"	{	return s.getHistoryByWalletIdAndHistoryType(APIstub, args)
 	} else if function == "updateHistory_Run"					{	return s.updateHistory_Run(APIstub, args)
 	}
 

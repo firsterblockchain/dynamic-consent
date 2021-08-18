@@ -1,5 +1,5 @@
 © 2020-2021 vtw <hyunwoo.kwon@vtw.co.kr>
-Copyright (c) 2020, vtw 
+Copyright (c) 2020, vtw. co ltd 
 
 package chaincode
 

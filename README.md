@@ -1,6 +1,6 @@
 # dynamic-consent
 
-# 1. outline
+## 1. outline
 
 The dynamic-consent repository is a research result of blockchain and channel-based Personal Health Record(PHR) platform development supported by KHIDI(Korea Health Industry Development Institute.)
 It contains authorization, dynamic consent, medical information sharing records features with Hyperledger Fabric version 2.2 for PHR management using blockchain technology.
@@ -10,14 +10,16 @@ Chaincode with GO language and the server using Node.js on this repository are n
 * Hyperledger Fabric has various operation processes by each version, so you should know that using other versions may affect regular operation.
 
 
-# 2. source code description
+## 2. source code description
 
-Path: dynamic-consent/hyperledger_fabric/application
+### * Path: dynamic-consent/hyperledger_fabric/application
+
 Source codes using Javascript and Node.js run functions developed by blockchain chain-code with Restful API.
 - .js files are the first version of source code implemented from basic designs (one upload in 2020)
 - v1.0.js files are the final version of the source code implementing all functions (one upload in 2021)
 
-Path: dynamic-consent/hyperledger_fabric/chaincode
+### * Path: dynamic-consent/hyperledger_fabric/chaincode
+
 Source codes with GO language run functions like authorization, dynamic consent, and medical information sharing records.
 - .js files are the first version of source code implemented from basic designs (one upload in 2020)
 - v1.0.js files are the final version of the source code implementing all functions (one upload in 2021)
